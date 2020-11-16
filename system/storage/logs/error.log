@@ -1,0 +1,37 @@
+2020-10-07 0:22:41 - PHP Warning:  mysqli::__construct(): php_network_getaddresses: getaddrinfo failed: Host desconocido.  in C:\xampp\htdocs\opencart\system\library\db\mysqli.php on line 7
+2020-10-07 0:22:41 - PHP Warning:  mysqli::__construct(): (HY000/2002): php_network_getaddresses: getaddrinfo failed: Host desconocido.  in C:\xampp\htdocs\opencart\system\library\db\mysqli.php on line 7
+2020-10-07 0:22:41 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in C:\xampp\htdocs\opencart\system\library\db\mysqli.php on line 10
+2020-10-07 0:22:41 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in C:\xampp\htdocs\opencart\system\library\db\mysqli.php on line 10
+2020-10-07 0:22:41 - PHP Notice:  Undefined variable: mysql in C:\xampp\htdocs\opencart\install\controller\install\step_3.php on line 280
+2020-10-07 0:22:41 - PHP Notice:  Trying to get property 'connect_error' of non-object in C:\xampp\htdocs\opencart\install\controller\install\step_3.php on line 280
+2020-10-07 0:23:22 - PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'admin'@'localhost' (using password: YES) in C:\xampp\htdocs\opencart\system\library\db\mysqli.php on line 7
+2020-10-07 0:23:22 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in C:\xampp\htdocs\opencart\system\library\db\mysqli.php on line 10
+2020-10-07 0:23:22 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in C:\xampp\htdocs\opencart\system\library\db\mysqli.php on line 10
+2020-10-07 0:23:22 - PHP Notice:  Undefined variable: mysql in C:\xampp\htdocs\opencart\install\controller\install\step_3.php on line 280
+2020-10-07 0:23:22 - PHP Notice:  Trying to get property 'connect_error' of non-object in C:\xampp\htdocs\opencart\install\controller\install\step_3.php on line 280
+2020-10-07 0:23:29 - PHP Warning:  mysqli::__construct(): php_network_getaddresses: getaddrinfo failed: Host desconocido.  in C:\xampp\htdocs\opencart\system\library\db\mysqli.php on line 7
+2020-10-07 0:23:29 - PHP Warning:  mysqli::__construct(): (HY000/2002): php_network_getaddresses: getaddrinfo failed: Host desconocido.  in C:\xampp\htdocs\opencart\system\library\db\mysqli.php on line 7
+2020-10-07 0:23:29 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in C:\xampp\htdocs\opencart\system\library\db\mysqli.php on line 10
+2020-10-07 0:23:29 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in C:\xampp\htdocs\opencart\system\library\db\mysqli.php on line 10
+2020-10-07 0:23:29 - PHP Notice:  Undefined variable: mysql in C:\xampp\htdocs\opencart\install\controller\install\step_3.php on line 280
+2020-10-07 0:23:29 - PHP Notice:  Trying to get property 'connect_error' of non-object in C:\xampp\htdocs\opencart\install\controller\install\step_3.php on line 280
+2020-10-07 0:23:52 - PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'admin'@'localhost' (using password: YES) in C:\xampp\htdocs\opencart\system\library\db\mysqli.php on line 7
+2020-10-07 0:23:52 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in C:\xampp\htdocs\opencart\system\library\db\mysqli.php on line 10
+2020-10-07 0:23:52 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in C:\xampp\htdocs\opencart\system\library\db\mysqli.php on line 10
+2020-10-07 0:23:52 - PHP Notice:  Undefined variable: mysql in C:\xampp\htdocs\opencart\install\controller\install\step_3.php on line 280
+2020-10-07 0:23:52 - PHP Notice:  Trying to get property 'connect_error' of non-object in C:\xampp\htdocs\opencart\install\controller\install\step_3.php on line 280
+2020-10-07 0:26:39 - PHP Warning:  mysqli::__construct(): (HY000/1049): Unknown database 'porter' in C:\xampp\htdocs\opencart\system\library\db\mysqli.php on line 7
+2020-10-07 0:26:39 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in C:\xampp\htdocs\opencart\system\library\db\mysqli.php on line 10
+2020-10-07 0:26:39 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in C:\xampp\htdocs\opencart\system\library\db\mysqli.php on line 10
+2020-10-07 0:26:39 - PHP Notice:  Undefined variable: mysql in C:\xampp\htdocs\opencart\install\controller\install\step_3.php on line 280
+2020-10-07 0:26:39 - PHP Notice:  Trying to get property 'connect_error' of non-object in C:\xampp\htdocs\opencart\install\controller\install\step_3.php on line 280
+2020-10-07 0:26:52 - PHP Warning:  mysqli::__construct(): (HY000/1049): Unknown database 'porter' in C:\xampp\htdocs\opencart\system\library\db\mysqli.php on line 7
+2020-10-07 0:26:52 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in C:\xampp\htdocs\opencart\system\library\db\mysqli.php on line 10
+2020-10-07 0:26:52 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in C:\xampp\htdocs\opencart\system\library\db\mysqli.php on line 10
+2020-10-07 0:26:52 - PHP Notice:  Undefined variable: mysql in C:\xampp\htdocs\opencart\install\controller\install\step_3.php on line 280
+2020-10-07 0:26:52 - PHP Notice:  Trying to get property 'connect_error' of non-object in C:\xampp\htdocs\opencart\install\controller\install\step_3.php on line 280
+2020-10-07 0:27:40 - PHP Warning:  mysqli::__construct(): (HY000/1049): Unknown database 'porter' in C:\xampp\htdocs\opencart\system\library\db\mysqli.php on line 7
+2020-10-07 0:27:40 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in C:\xampp\htdocs\opencart\system\library\db\mysqli.php on line 10
+2020-10-07 0:27:40 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in C:\xampp\htdocs\opencart\system\library\db\mysqli.php on line 10
+2020-10-07 0:27:40 - PHP Notice:  Undefined variable: mysql in C:\xampp\htdocs\opencart\install\controller\install\step_3.php on line 280
+2020-10-07 0:27:40 - PHP Notice:  Trying to get property 'connect_error' of non-object in C:\xampp\htdocs\opencart\install\controller\install\step_3.php on line 280
