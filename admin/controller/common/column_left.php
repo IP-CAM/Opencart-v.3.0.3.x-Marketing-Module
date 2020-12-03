@@ -15,7 +15,6 @@ class ControllerCommonColumnLeft extends Controller {
 				'href'     => $this->url->link('common/dashboard', 'user_token=' . $this->session->data['user_token'], true),
 				'children' => array()
 			);
-			
 			// Catalog
 			$catalog = array();
 			
@@ -651,7 +650,23 @@ class ControllerCommonColumnLeft extends Controller {
 					'href'     => $this->url->link('report/statistics', 'user_token=' . $this->session->data['user_token'], true),
 					'children' => array()		
 				);
-			}	
+			}
+
+			if ($this->user->hasPermission('access', 'report/import_products')) {
+				$report[] = array(
+					'name'	   => 'Import Products',
+					'href'     => $this->url->link('report/import_products', 'user_token=' . $this->session->data['user_token'], true),
+					'children' => array()		
+				);
+			}
+
+			if ($this->user->hasPermission('access', 'report/export_products')) {
+				$report[] = array(
+					'name'	   => 'Export Products',
+					'href'     => $this->url->link('report/export_products', 'user_token=' . $this->session->data['user_token'], true),
+					'children' => array()		
+				);
+			}
 			
 			$data['menus'][] = array(
 				'id'       => 'menu-report',

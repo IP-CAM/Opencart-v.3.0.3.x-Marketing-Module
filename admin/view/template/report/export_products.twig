@@ -1,0 +1,327 @@
+{{ header }}{{ column_left }}
+<div id="content">
+	<div class="page-header">
+		<div class="container-fluid">
+			<h1>{{ heading_title }}</h1>
+			<ul class="breadcrumb">
+				{% for breadcrumb in breadcrumbs %}
+					<li>
+						<a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+	<div class="container-fluid">
+		{% if error_warning %}
+			<div class="alert alert-danger alert-dismissible">
+				<i class="fa fa-exclamation-circle"></i>
+				{{ error_warning }}
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+			</div>
+		{% endif %}
+		{% if success %}
+			<div class="alert alert-success alert-dismissible">
+				<i class="fa fa-check-circle"></i>
+				{{ success }}
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+			</div>
+		{% endif %}
+		<div class="alert alert-warning alert-dismissible">
+			<i class="fa fa-exclamation-circle"></i>
+			{{ text_warning }}
+		</div>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">
+					<i class="fa fa-download"></i>
+					{{ text_list }}</h3>
+			</div>
+			<div class="panel-body">
+				<div class="well">
+					<form class="form-horizontal" id="filters">
+						<div class="input-group col-sm-6 col-sm-offset-3">
+							<select name="filter" id="filter" class="form-control">
+								<option value="by_manufacturer" selected="selected">{{ by_manufacturer }}</option>
+								<option value="by_sku">{{ by_sku }}</option>
+								<option value="by_sku_by_manufacturer">{{ by_sku }}
+									and
+									{{ by_manufacturer }}</option>
+								<option value="by_name">{{ by_name }}</option>
+								<option value="by_category">{{ by_category }}</option>
+								<option value="by_stock">{{ by_stock }}</option>
+
+							</select>
+						</div>
+						<br/>
+						<div class="input-group col-sm-3 col-sm-offset-4" id="by_manufacturer">
+							<select name="by_manufacturer" id="" class="form-control">
+								{% for manufacturer in manufacturer_list %}
+									<option value="{{ manufacturer.manufacturer_id }}">{{ manufacturer.name }}</option>
+								{% endfor %}
+							</select>
+						</div>
+						<br/>
+						<div class="input-group col-sm-3 col-sm-offset-4" id="by_sku">
+							<select name="by_sku" id="" class="form-control" style="display:none">
+								{% for sku in sku_list %}
+									<option value="{{ sku.sku }}">{{ sku.sku }}</option>
+								{% endfor %}
+							</select>
+						</div>
+						<br/>
+						<div class="input-group col-sm-3 col-sm-offset-4" id="">
+							<select name="by_category" class="form-control" style="display:none">
+								{% for category in category_list %}
+									<option value="{{ category.category_id }}">{{ category.name }}</option>
+								{% endfor %}
+							</select>
+						</div>
+						<br/>
+						<div class="input-group col-sm-3 col-sm-offset-4" id="">
+							<select name="by_name" class="form-control" style="display:none" id="name-filter">
+								<option value="{{ start_with}}">{{ start_with }}</option>
+								<option value="{{ contain }}">{{ contain }}</option>
+							</select>
+						</div>
+						<br/>
+						<div class="input-group col-sm-3 col-sm-offset-4" id="">
+							<select name="by_stock" class="form-control" style="display:none" id="stock_filter">
+								<option value="out_of_stock" selected="selected">{{ out_of_stock }}</option>
+								<option value="in_stock">{{ in_stock }}</option>
+								<option value="status_enable">{{ status_enable }}</option>
+								<option value="status_disable">{{ status_disable }}</option>
+							</select>
+						</div>
+						<br/>
+						<div class="input-group col-sm-6 col-sm-offset-3" id="">
+							<input type="text" name="by_name" value="" placeholder="{{ entry_text }}" id="input-name" class="form-control" style="display:none"/>
+
+						</div>
+					</div>
+				</form>
+				<form class="form-horizontal">
+					<div class="form-group">
+						<div class="col-sm-3">
+							<label class="checkbox-inline">
+								<input type="checkbox" name="name" value="name"/>
+								{{ name }}
+							</label>
+						</div>
+						<div class="col-sm-3">
+							<label class="checkbox-inline">
+								<input type="checkbox" name="quantity" value="quantity"/>
+								{{ quantity }}
+							</label>
+						</div>
+						<div class="col-sm-3">
+							<label class="checkbox-inline">
+								<input type="checkbox" name="price" value="price"/>
+								{{ price }}
+							</label>
+
+						</div>
+						<div class="col-sm-3">
+							<label class="checkbox-inline">
+								<input type="checkbox" name="rewards" value="rewards"/>
+								{{ rewards }}
+							</label>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-3">
+							<label class="checkbox-inline">
+								<input type="checkbox" name="points" value="points"/>
+								{{ points }}
+							</label>
+						</div>
+						<div class="col-sm-3">
+							<label class="checkbox-inline">
+								<input type="checkbox" name="order" value="order"/>
+								{{ order }}
+							</label>
+						</div>
+						<div class="col-sm-3">
+							<label class="checkbox-inline">
+								<input type="checkbox" name="sku" value="sku"/>
+								{{ sku }}
+							</label>
+
+						</div>
+						<div class="col-sm-3">
+							<label class="checkbox-inline">
+								<input type="checkbox" name="manufacturer" value="manufacturer"/>
+								{{ manufacturer }}
+							</label>
+
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-3">
+							<label class="checkbox-inline">
+								<input type="checkbox" name="special" value="special"/>
+								{{ special }}
+							</label>
+						</div>
+						<div class="col-sm-3">
+							<label class="checkbox-inline">
+								<input type="checkbox" name="category" value="category"/>
+								{{ category }}
+							</label>
+						</div>
+						<div class="col-sm-3">
+							<label class="checkbox-inline">
+								<input type="checkbox" name="purchased" value="purchased"/>
+								{{ purchased }}
+							</label>
+						</div>
+						<div class="col-sm-3">
+							<label class="checkbox-inline">
+								<input type="checkbox" name="url" value="url"/>
+								{{ url }}
+							</label>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-3">
+							<label class="checkbox-inline">
+								<input type="checkbox" name="status" value="status"/>
+								{{ status }}
+							</label>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-sm-12">
+							<button type="button" id="button-export" class="btn btn-primary">
+								<i class="fa fa-download"></i>
+								{{ button_import }}</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	$("#filter").on("change", function ()
+{
+
+var selected = $(this).val();
+$("#filters :input[name!='filter']").hide();
+if (selected == "by_sku_by_manufacturer")
+{
+
+$("#filters :input[name='by_sku']").show();
+$("#filters :input[name='by_manufacturer']").show();
+
+}
+else
+{
+
+$("#filters :input[name='" + selected + "']").show();
+
+}
+
+});
+$("#button-export").on("click", function ()
+{
+
+var selected = $("#filter").val();
+var filter_value = "";
+var sub_filter_value = "";
+
+switch (selected)
+{
+
+case "by_sku_by_manufacturer": filter_value = $("#filters :input[name='by_sku']").val();
+sub_filter_value = $("#filters :input[name='by_manufacturer']").val();
+break;
+case "by_name": filter_value = $("#name-filter").val();
+console.log("filter_value", filter_value);
+sub_filter_value = $("#input-name").val();
+break;
+case "by_stock": filter_value = $("#filters :input[name='" + selected + "']").val();
+sub_filter_value = $("#stock_filter").val();
+break;
+default: filter_value = $("#filters :input[name='" + selected + "']").val();
+break;
+
+}
+
+var checkboxes = new Array();
+$("input:checked").each(function ()
+{
+
+checkboxes.push($(this).val());
+
+});
+
+var data = {
+
+"main_filter": selected,
+"filter_value": filter_value,
+"sub_filter_value": sub_filter_value,
+"checkboxes": checkboxes.join(";")
+
+};
+
+$.ajax(
+{
+
+url: "index.php?route=report/export_products/export&user_token={{user_token}}",
+type: "post",
+data: data,
+cache: false,
+beforeSend: function ()
+{
+
+$("#button-export").button("loading");
+
+},
+complete: function ()
+{
+
+$("#button-export").button("reset");
+
+},
+success: function (data, status, xhr)
+{
+
+if (data != null)
+{ /*
+               * Make CSV downloadable
+               */
+var downloadLink = document.createElement("a");
+var fileData = ['\ufeff' + data];
+
+var blobObject = new Blob(fileData,
+{type: "text/csv;charset=utf-8;"});
+
+var url = URL.createObjectURL(blobObject);
+downloadLink.href = url;
+downloadLink.download = "products.csv";
+
+/*
+               * Actually download CSV
+               */
+document.body.appendChild(downloadLink);
+downloadLink.click();
+document.body.removeChild(downloadLink);
+
+}
+
+},
+error: function (xhr, ajaxOptions, thrownError)
+{
+
+$("#content > .container-fluid").prepend('<div class="alert alert-danger alert-dismissible"><i class="fa fa-exclamation-circle"></i> ' + thrownError + ' <button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+
+}
+
+}
+);
+
+});
+</script>
+{{ footer }}
