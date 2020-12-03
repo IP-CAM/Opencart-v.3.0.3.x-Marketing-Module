@@ -45,7 +45,9 @@
                 <option value="customer">{{ text_customer }}</option>
                 <option value="affiliate_all">{{ text_affiliate_all }}</option>
                 <option value="affiliate">{{ text_affiliate }}</option>
-                <option value="product">{{ text_product }}</option>
+				<option value="product">{{ text_product }}</option>
+                <option value="manufacturer">{{ text_manufacturer }}</option>
+                <option value="categories">{{ text_categories }}</option>
               </select>
             </div>
           </div>
@@ -57,6 +59,34 @@
                 {% for customer_group in customer_groups %}
                 
                 <option value="{{ customer_group.customer_group_id }}">{{ customer_group.name }}</option>
+                
+                {% endfor %}
+              
+              </select>
+            </div>
+          </div>
+		  <div class="form-group to" id="to-manufacturer">
+            <label class="col-sm-2 control-label" for="input-manufacturer">{{ entry_manufacturer }}</label>
+            <div class="col-sm-10">
+              <select name="manufacturer" id="input-manufacturer" class="form-control">
+                
+                {% for manufacturer in manufacturer_list %}
+                
+                <option value="{{ manufacturer.manufacturer_id }}">{{ manufacturer.name }}</option>
+                
+                {% endfor %}
+              
+              </select>
+            </div>
+          </div>
+		  <div class="form-group to" id="to-categories">
+            <label class="col-sm-2 control-label" for="input-categories">{{ entry_categories }}</label>
+            <div class="col-sm-10">
+              <select name="categories" id="input-categories" class="form-control">
+                
+                {% for category in category_list %}
+                
+                <option value="{{ category.category_id }}">{{ category.name }}</option>
                 
                 {% endfor %}
               
@@ -241,7 +271,7 @@ function send(url) {
 
 			if (json['error']) {
 				if (json['error']['warning']) {
-					$('#content > .container-fluid').prepend('<div class="alert alert-danger alert-dismissible"><i class="fa fa-exclamation-circle"></i> ' + json['error']['warning'] + ' <button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+					$('#content > .container-fluid').prepend('<div class="alert alert-warning alert-dismissible"><i class="fa fa-exclamation-circle"></i> ' + json['error']['warning'] + ' <button type="button" class="close" data-dismiss="alert">&times;</button></div>');
 				}
 
 				if (json['error']['email']) {

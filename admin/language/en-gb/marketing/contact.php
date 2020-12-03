@@ -14,6 +14,8 @@ $_['text_customer']        = 'Customers';
 $_['text_affiliate_all']   = 'All Affiliates';
 $_['text_affiliate']       = 'Affiliates';
 $_['text_product']         = 'Products';
+$_['text_manufacturer']    = 'Marcas';
+$_['text_categories']      = 'Cetegorias';
 
 // Entry
 $_['entry_store']          = 'From';
@@ -23,11 +25,13 @@ $_['entry_customer']       = 'Customer';
 $_['entry_affiliate']      = 'Affiliate';
 $_['entry_product']        = 'Products';
 $_['entry_product']        = 'Products';
+$_['entry_manufacturer']   = 'Marcas';
+$_['entry_categories']     = 'Cetegorias';
 $_['entry_subject']        = 'Subject';
 $_['entry_message']        = 'Message';
 
 // Help
-$_['help_customer']        = '(Autocomplete)';
+$_['error_email']        = '(Autocomplete)';
 $_['help_affiliate']       = '(Autocomplete)';
 $_['help_product']         = 'Send only to customers who have ordered products in the list. (Autocomplete)';
 $_['help_brand_category']  = 'Send only to customers who have ordered products from specific brand and categories.';
@@ -38,3 +42,4 @@ $_['help_category']  = 'Send only to customers who have ordered products from sp
 $_['error_permission']     = 'Warning: You do not have permission to send E-Mails!';
 $_['error_subject']        = 'E-Mail Subject required!';
 $_['error_message']        = 'E-Mail Message required!';
+$_['error_email']          = 'No emails were found.';

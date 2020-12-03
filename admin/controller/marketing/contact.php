@@ -28,9 +28,12 @@ class ControllerMarketingContact extends Controller {
 		$data['stores'] = $this->model_setting_store->getStores();
 
 		$this->load->model('customer/customer_group');
+		$this->load->model('marketing/marketing');
 
 		$data['customer_groups'] = $this->model_customer_customer_group->getCustomerGroups();
-
+        $data['manufacturer_list'] = $this->model_marketing_marketing->getManufacturerList();
+		$data['category_list'] = $this->model_marketing_marketing->getCategoryList();
+		
 		$data['header'] = $this->load->controller('common/header');
 		$data['column_left'] = $this->load->controller('common/column_left');
 		$data['footer'] = $this->load->controller('common/footer');
@@ -180,6 +183,30 @@ class ControllerMarketingContact extends Controller {
 							}
 						}
 						break;
+					case 'manufacturer':
+						if (isset($this->request->post['manufacturer'])) {
+							$products = $this->model_sale_order->getProductsPurchasedByManufacturer($this->request->post['manufacturer']);
+							$email_total = $this->model_sale_order->getTotalEmailsByProductsOrdered($products);
+
+							$results = $this->model_sale_order->getEmailsByProductsOrdered($products, ($page - 1) * 10, 10);
+
+							foreach ($results as $result) {
+								$emails[] = $result['email'];
+							}
+						}
+						break;
+					case 'categories':
+							if (isset($this->request->post['categories'])) {
+								$products = $this->model_sale_order->getProductsPurchasedByCategory($this->request->post['categories']);
+								$email_total = $this->model_sale_order->getTotalEmailsByProductsOrdered($products);
+	
+								$results = $this->model_sale_order->getEmailsByProductsOrdered($products, ($page - 1) * 10, 10);
+	
+								foreach ($results as $result) {
+									$emails[] = $result['email'];
+								}
+							}
+							break;
 				}
 
 				if ($emails) {
@@ -223,7 +250,7 @@ class ControllerMarketingContact extends Controller {
 						}
 					}
 				} else {
-					$json['error']['email'] = $this->language->get('error_email');
+					$json['error']['warning'] = $this->language->get('error_email');
 				}
 			}
 		}

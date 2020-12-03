@@ -115,4 +115,31 @@ class ModelMarketingMarketing extends Model {
 
 		return $query->row['total'];
 	}
+
+	public function getManufacturerList()
+    {
+
+        $manufacturer_list = array();
+
+        if (!$manufacturer_list) {
+            $query = $this->db->query("SELECT manufacturer_id, name FROM " . DB_PREFIX . "manufacturer");
+
+            $manufacturer_list = $query->rows;
+        }
+
+        return $manufacturer_list;
+    }
+
+    public function getCategoryList()
+    {
+
+        $category_list = array();
+
+        if (!$category_list) {
+            $query = $this->db->query("SELECT category_id, name FROM " . DB_PREFIX . "category_description WHERE language_id = 1");
+            $category_list = $query->rows;
+        }
+
+        return $category_list;
+    }
 }

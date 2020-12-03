@@ -475,4 +475,35 @@ class ModelSaleOrder extends Model {
 
 		return $query->row['total'];
 	}
+
+	public function getProductsPurchasedByCategory($category)
+	{
+		$products_id = array();
+		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "product INNER JOIN " . DB_PREFIX .
+			"product_to_category ON " . DB_PREFIX . "product.product_id = " . DB_PREFIX . "product_to_category.product_id AND " . DB_PREFIX .
+			"product_to_category.category_id = " . $category);
+
+			if ($query->num_rows) {
+				foreach ($query->rows as $row) {
+					$product_id = $row["product_id"];
+					array_push($products_id, $product_id );
+				}
+			}
+		return $products_id;
+	}
+
+	public function getProductsPurchasedByManufacturer($manufacturer)
+	{
+		$products_id = array();
+		$query = $this->db->query("SELECT product_id FROM " . DB_PREFIX . "product  WHERE " . DB_PREFIX .
+			"manufacturer_id = " . $manufacturer);
+
+			if ($query->num_rows) {
+				foreach ($query->rows as $row) {
+					$product_id = $row["product_id"];
+					array_push($products_id, $product_id );
+				}
+			}
+		return $products_id;
+	}
 }
